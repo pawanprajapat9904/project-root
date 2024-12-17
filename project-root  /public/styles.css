@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f6f8; /* Light background for a clean look */
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 12px; /* More pronounced rounding */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for a modern look */
+    padding: 30px;
+    gap: 30px;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-out; /* Smooth fade-in */
+}
+
+/* Sections */
+.section {
+    flex: 1;
+    padding: 10px;
+    min-width: 320px; /* Minimum width for better responsiveness */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), box-shadow 0.4s ease-in-out; /* Smooth transitions */
+}
+
+.section:hover {
+    transform: translateY(-12px); /* Enhanced lift effect */
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25); /* Deeper shadow for hover */
+}
+
+/* Headings */
+h2 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: slideInFromTop 0.7s ease-out; /* Enhanced slide-in animation */
+}
+
+/* Textareas and Inputs */
+textarea, input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 14px;
+    border: 1px solid #dee2e6; /* Lighter border color */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+textarea {
+    min-height: 150px; /* Slightly larger textarea for more space */
+    resize: none; /* None resizing */
+}
+
+input {
+    height: 45px; /* Slightly taller input fields */
+}
+
+/* Input Focus Effect */
+input:focus, textarea:focus {
+    border-color: #0056b3; /* Darker border color on focus */
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.3); /* Enhanced focus glow */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 16px; /* Larger padding for better clickability */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold text for emphasis */
+    letter-spacing: 1px; /* Slightly spaced letters */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight scale-up effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+button:active {
+    background-color: #004494;
+    transform: scale(1); /* Return to original size */
+}
+
+/* Alerts */
+.alert {
+    color: #dc3545;
+    font-size: 0.95em;
+    margin-top: 15px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 25px;
+    }
+
+    .section {
+        flex-basis: 48%;
+    }
+}
+
+@media (max-width: 992px) {
+    .section {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.6em; /* Adjusted font size */
+        animation: slideInFromBottom 0.7s ease-out; /* Slide-in from bottom on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    textarea, input {
+        font-size: 0.9em; /* Smaller textareas and inputs */
+    }
+
+    button {
+        font-size: 1em; /* Adjusted button text size */
+        padding: 14px; /* Adjusted button padding */
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption/Decryption System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section" id="encryption">
+            <h2>Encryption</h2>
+            <textarea id="encryptionInput" placeholder="Enter text to encrypt..."></textarea><br>
+            <button onclick="generateKey()">Generate Key</button><br>
+            <input type="text" id="encryptionKey" placeholder="Generated Key" readonly><br>
+            <button onclick="encryptData()">Encrypt</button><br>
+            <textarea id="encryptionOutput" placeholder="Encrypted text will appear here..." readonly></textarea><br>
+        </div>
+        <div class="section" id="decryption">
+            <h2>Decryption</h2>
+            <textarea id="decryptionInput" placeholder="Enter text to decrypt..."></textarea><br>
+            <input type="text" id="decryptionKey" placeholder="Key"><br>
+            <button onclick="decryptData()">Decrypt</button><br>
+            <textarea id="decryptionOutput" placeholder="Decrypted text will appear here..." readonly></textarea>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
